@@ -1,59 +1,20 @@
-// window objects / methods / properties
+// document
 
-// alert
-// window.alert('Tere hommikust'); //
-// alert('Tere hommikust'); //
+let sisu;
 
-// prompt
+sisu = document; //sisu html-is
+sisu = document.all; // html tagid kasutamise järjekorras
 
-// const sisend = prompt('Sisesta oma nimi');
-// alert('Tere hommikust ' + sisend)
+sisu = document.all[2]; // konkreetne html tag
+sisu = document.all.length; // kui palju on html tagi
 
-// confirm
+//document properties 
+sisu = document.head; // head isu
+sisu = document.body; // body sisu
+sisu = document.doctype; // doctype
+sisu = document.domain; // domeen
+sisu = document.URL; //URL
+sisu = document.characterSet;
+sisu = document.contentType;
 
-// if(confirm('Kas oled nõus?')){
-    // console.log('jah');
-// }else{
-//    console.log('ei');
-// }
-
-/*let valiKorgus = window.outerHeight;
-
-console.log(valiKorgus)
-
-let valiLaius = window.outerWidth;
-
-console.log(valiLaius)
-
-let siseKorgus = window.innerHeight;
-let siseLaius = window.innerWidth;
-
-console.log(siseKorgus, siseLaius)
-
-// scroll
-
-scrolY = window.scrollY;
-console.log(scrolY)
-
-// location object
-
-let objekt = window.location;
-let hostname = window.location.hostname;
-console.log(hostname);
-
-let port = window.location.port;
-console.log(port);
-
-let href = window.location.href;
-console.log(href);
-
-let search = window.location.search;
-console.log(search);
-
-// redirect
-
-window.location.href = 'https://khk.ee';
-
-//reload test
-
-//window.location.reload();
+console.log(sisu);
