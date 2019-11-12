@@ -30,8 +30,15 @@ sisu = document.links[0]; // esimene link
 sisu = document.links[0].className; // lingi klassid
 sisu = document.links[0].classList[0]; // klasside massiiv ja sealt elementide lugemine
 
+//pildid
 
+sisu = document.images;
 
+// skriptid
+
+sisu = document.scripts;
+sisu = document.scripts[1].getAttribute('src'); // lokaalne skript
+sisu = document.scripts[0].getAttribute('src'); // materialize skript
 
 
 console.log(sisu);
