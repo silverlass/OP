@@ -17,7 +17,7 @@
 //    console.log('ei');
 // }
 
-let valiKorgus = window.outerHeight;
+/*let valiKorgus = window.outerHeight;
 
 console.log(valiKorgus)
 
@@ -56,4 +56,4 @@ window.location.href = 'https://khk.ee';
 
 //reload test
 
-window.location.reload();
+//window.location.reload();
