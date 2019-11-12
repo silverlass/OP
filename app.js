@@ -54,6 +54,6 @@ console.log(search);
 
 window.location.href = 'https://khk.ee';
 
-//reload
+//reload test
 
 window.location.reload();
