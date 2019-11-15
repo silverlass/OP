@@ -29,6 +29,13 @@ sisu = nimekiri.childElementcount;
 
 nimekirjaElement = document.querySelector('li.collection-item');
 
+sisu=nimekirjaElement.nextSibling; //nodetype
+sisu=nimekirjaElement.nextElementSibling; //nodetype value
+sisu=nimekirjaElement.previousSibling; //nodetype
+sisu=nimekirjaElement.previousElementSibling; //nodetype value
+
+
+
 console.log(sisu);
 /*
 1 - element
