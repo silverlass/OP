@@ -1,12 +1,25 @@
-sisu = document.querySelector('#title'); // id järgi
-sisu = document.querySelector('.card-title'); // klassnime järgi
-sisu = document.querySelector('h5'); // elemendi järgi
+//multiple elemendid
 
-// stiili muutmine
+// klassinime j'rgi
+let sisu = document.getElementsByClassName('collection-item');
 
-document.querySelector('li').style.color = 'red';
-document.querySelector('ul li').style.color = 'blue';
-document.querySelector('li:last-child').style.color = 'red';
-document.querySelector('li:nth-child(2)').style.color = 'orange';
 
 console.log(sisu);
+console.log(sisu[0]);
+
+sisu[0].style.color = 'orange';
+sisu[2].innerHTML = 'Õpi arvutivõrgud';
+
+
+// queryselector + klassnime järgi
+//const nimekirjaElemendid = document.querySelector('ul').getElementsByClassName('collection-item');
+
+let nimekirjaElemendid = document.getElementsByTagName('li');
+
+// teisendame HTMLcollection massiiviks (Array)
+
+nimekirjaElemendid = Array.from(nimekirjaElemendid);
+nimekirjaElemendid.reverse();
+
+
+console.log(nimekirjaElemendid)
