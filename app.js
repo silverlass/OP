@@ -1,46 +1,40 @@
-//multiple elemendid
+// node omadused ja meetodid
 
-// klassinime j'rgi
-let sisu = document.getElementsByClassName('collection-item');
+let nimekiri = document.querySelectorAll('ul.collection');
+let nimekirjaElement = document.querySelectorAll('li.collection-item');
 
+console.log(nimekiri);
+console.log(nimekirjaElement);
+
+nimekiri = document.querySelector('ul.collection');
+console.log(nimekiri);
+
+//sisu = nimekiri.childNodes[0];
+
+sisu = nimekiri.children;
+sisu = nimekiri.children[1];
+nimekiri.children[1].textContent = 'Õpi rohkem JS';
+nimekiri.children[2].children[0].id = 'katse';
 
 console.log(sisu);
-console.log(sisu[0]);
+console.log(nimekiri.children[2].children[0]);
 
-sisu[0].style.color = 'red';
+sisu = nimekiri.firstChild; //node type
+sisu = nimekiri.firstElementChild; // value
 
+sisu = nimekiri.lastChild; //node type
+sisu = nimekiri.lastElementChild; // value
 
+sisu = nimekiri.childElementcount;
 
-// queryselector + klassnime järgi
-//const nimekirjaElemendid = document.querySelector('ul').getElementsByClassName('collection-item');
+nimekirjaElement = document.querySelector('li.collection-item');
 
-let nimekirjaElemendid = document.getElementsByTagName('li');
-
-// teisendame HTMLcollection massiiviks (Array)
-
-nimekirjaElemendid = Array.from(nimekirjaElemendid);
-//nimekirjaElemendid.reverse();
-
-// massiivi läbimine tüskliga
-
-for(let i=0;i<nimekirjaElemendid.length;i++){
-    nimekirjaElemendid[i].style.background = 'blue';
-    nimekirjaElemendid[1].style.background = 'black';
-    nimekirjaElemendid[2].style.background = 'white';
-    
-    nimekirjaElemendid[i].style.color = 'pink';
-}
-//for each
-
+console.log(sisu);
 /*
-nimekirjaElemendid.forEach(function(element){
-  console.log(element);
-  element.style.background = "#ddd"
-})
-
-
-console.log(nimekirjaElemendid)
+1 - element
+2 - atribuut
+3 - text
+8 - kommentaar
+9 - dokument ise
+10 - doctype
 */
-
-let nimekiriPaaritu = document.querySelectorAll('li:nth-child(even');
-console.log(nimekiriPaaritu);
