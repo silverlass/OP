@@ -1,47 +1,44 @@
-// node omadused ja meetodid
+//document meetod
+// elementide loomine
 
-let nimekiri = document.querySelectorAll('ul.collection');
-let nimekirjaElement = document.querySelectorAll('li.collection-item');
+const liElement = document.createElement('li');
 
-console.log(nimekiri);
-console.log(nimekirjaElement);
+// lisa klass
 
-nimekiri = document.querySelector('ul.collection');
-console.log(nimekiri);
+liElement.className = 'collection-item';
 
-//sisu = nimekiri.childNodes[0];
+//lisa ID
+liElement.id = 'new-item';
 
-sisu = nimekiri.children;
-sisu = nimekiri.children[1];
-nimekiri.children[1].textContent = 'Õpi rohkem JS';
-nimekiri.children[2].children[0].id = 'katse';
+// lisa atribuudid
 
-console.log(sisu);
-console.log(nimekiri.children[2].children[0]);
+liElement.setAttribute('title','Uus element');
 
-sisu = nimekiri.firstChild; //node type
-sisu = nimekiri.firstElementChild; // value
+// lisa teksti väljund
 
-sisu = nimekiri.lastChild; //node type
-sisu = nimekiri.lastElementChild; // value
+liElement.textContent = 'Uus element';
 
-sisu = nimekiri.childElementcount;
+// loome lingi elemendi
 
-nimekirjaElement = document.querySelector('li.collection-item');
+const link = document.createElement('a');
 
-sisu=nimekirjaElement.nextSibling; //nodetype
-sisu=nimekirjaElement.nextElementSibling; //nodetype value
-sisu=nimekirjaElement.previousSibling; //nodetype
-sisu=nimekirjaElement.previousElementSibling; //nodetype value
+link.className = 'delete-item secondary-content';
+
+link.innerHTML = '<i class="fa fa-remove"></i>';
+
+// lisame lingi listi elemendi sisse
+liElement.appendChild(link); 
+
+//leaime ul elemendi DOM-is
+
+ulElement = document.querySelector('ul.collection');
+
+//lisa liElement ul elemendile
+
+ulElement.appendChild(liElement);
 
 
 
-console.log(sisu);
-/*
-1 - element
-2 - atribuut
-3 - text
-8 - kommentaar
-9 - dokument ise
-10 - doctype
-*/
+
+
+console.log(ulElement);
