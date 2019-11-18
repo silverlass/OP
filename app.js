@@ -1,44 +1,40 @@
-//document meetod
-// elementide loomine
+// lea vana element h5
 
-const liElement = document.createElement('li');
+const vanaPealkiri = document.querySelector('h5');
 
-// lisa klass
+// leia kaart, kus antud pealkiri on
 
-liElement.className = 'collection-item';
+const divCardAction = document.querySelector('.card-action');
 
-//lisa ID
-liElement.id = 'new-item';
+// loo uus pealkiri
 
-// lisa atribuudid
+const uusPealkiri = document.createElement('h3');
 
-liElement.setAttribute('title','Uus element');
+uusPealkiri.id = 'new-title';
 
-// lisa teksti väljund
+// lisa sisu
 
-liElement.textContent = 'Uus element';
+uusPealkiri.textContent = 'Uued ülesanded';
 
-// loome lingi elemendi
+//uusPealkiri.appendChild(document.createTextNode('Uued ülesanded'));
 
-const link = document.createElement('a');
+// asenda vana pealkiri uuega
 
-link.className = 'delete-item secondary-content';
-
-link.innerHTML = '<i class="fa fa-remove"></i>';
-
-// lisame lingi listi elemendi sisse
-liElement.appendChild(link); 
-
-//leaime ul elemendi DOM-is
-
-ulElement = document.querySelector('ul.collection');
-
-//lisa liElement ul elemendile
-
-ulElement.appendChild(liElement);
+divCardAction.replaceChild(uusPealkiri, vanaPealkiri);
 
 
+console.log(uusPealkiri);
 
 
+const vana = document.querySelector('span');
 
-console.log(ulElement);
+console.log(vana);
+
+const divVana = document.querySelector('.card-title');
+
+const uus = document.createElement('h3');
+
+uus.textContent = "Ülesanded";
+
+divVana.replaceChild(uus, vana);
+
