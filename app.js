@@ -30,7 +30,7 @@ const vana = document.querySelector('span');
 
 console.log(vana);
 
-const divVana = document.querySelector('.card-title');
+const divVana = document.querySelector('.card-content');
 
 const uus = document.createElement('h3');
 
