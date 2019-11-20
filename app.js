@@ -3,34 +3,28 @@
 
 const kustutaKoik = document.querySelector('.clear-tasks');
 
-kustutaKoik.addEventListener('click', vajutaNupp);
+const text = document.querySelector('h5');
+const kaart = document.querySelector('.card');
 
+//kustutaKoik.addEventListener('click', syndmus);
+//kustutaKoik.addEventListener('dblclick', syndmus);
+//kustutaKoik.addEventListener('mousedown', syndmus);
+//kaart.addEventListener('mouseleave', syndmus);
+//kaart.addEventListener('mouseneter', syndmus);
+//kaart.addEventListener('mouseover', syndmus);
+//kaart.addEventListener('mouseleave', syndmus);
 
-function vajutaNupp(e){
-let sisu = e;
+function syndmus(e){
+    // logi sündmuse tyyp
 
-// target
+    console.log(`sündmuse tyyp: ${e.type}`);
 
-sisu = e.target;
-sisu = e.target.id;
-sisu = e.target.className;
-sisu = e.target.classList;
+    // muuda text sisu: Hiirx kooridnaat, HiirY koordinaat
 
-// tüüp
+    text.textContent = "HiirX: " + e.offsetX + " HiirY: " + e.offsetY + ' Jüri IQ on:  ' + e.offsetX;
 
-sisu = e.type;
+    // body värv
 
-//sündmuse kooridnaadid browseri akna suhtes
-
-sisu = e.clientY;
-sisu = e.clientX;
-
-//sündmuse kooridnaadid elemendi enda suhtes
-
-sisu = e.offsetY;
-sisu = e.offsetX;
-
-console.log(sisu);
-
+    document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 40)`
 }
 
