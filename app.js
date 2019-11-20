@@ -7,12 +7,34 @@ const lisaUusYlesanne = document.getElementById('task');
 const text = document.querySelector('h5');
 const kaart = document.querySelector('.card');
 
+
 // kustutame lisaUusYlesanne väärtus
 
 lisaUusYlesanne.value='';
 
 
-//vormi saatmine
+//klaviatuur
+//keydown
+
+//lisaUusYlesanne.addEventListener('keydown', syndmus);
+
+// keyup
+// lisaUusYlesanne.addEventListener('keyup', syndmus);
+
+//keypress
+
+// lisaUusYlesanne.addEventListener('keypress', syndmus);
+
+// focus  ja blur
+
+// lisaUusYlesanne.addEventListener('focus', syndmus);
+
+//paste
+
+// lisaUusYlesanne.addEventListener('paste', syndmus);
+
+// lisaUusYlesanne.addEventListener('cut', syndmus);
+lisaUusYlesanne.addEventListener('input', syndmus);
 
 form.addEventListener('submit', syndmus)
 
