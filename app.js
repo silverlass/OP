@@ -1,38 +1,20 @@
-// // storage
+// inimese kirjeldus
 
-// // salvesta väärtus
+let eesnimi, perenimi;
+let vanus;
 
-// localStorage.setItem('nimi', 'Silver');
-// localStorage.setItem('perenimi', 'Lass');
-
-// // väärtuse eemaldamine
-
-// //localStorage.removeItem('nimi', 'Silver');
-
-// // väärtuste lugemine
-// const nimi = localStorage.getItem('nimi');
-// console.log(nimi);
-
-// // eemalda kõik väärtused
-
-// localStorage.clear();
-
-document.querySelector('form').addEventListener('submit', salvesta);
-
-function salvesta(e){
-    const uusYlesanne = document.getElementById('task').value;
-    localStorage.setItem('tasks', uusYlesanne);
-
-    let ylesanded;
-    if (localStorage.getItem('tasks') === null){
-        ylesanded = [];
-        console.log(ylesanded);
-    }else{
-        console.log('olemas')
-        
-    }
-
-
-
-    localStorage.setItem('tasks', uusYlesanne);
+function taisNimi(eesnimi, perenimi){
+    return `${eesnimi} ${perenimi}`;
 }
+
+function arvutaVanus(synnikuupaev){
+    synnikuupaev = new Date(synnikuupaev);
+    vaheSekundites =Date.now() - synnikuupaev.getTime();
+    vanusDate =new Date(vaheSekundites);
+    aastaDate = vanusDate.getUTCFullYear();
+    vanus = aastaDate -1970;
+    return `vanus ${vanus}`; 
+}
+
+console.log(taisNimi('sfdsdf', 'sfdsd'));
+console.log(arvutaVanus("2014-08-21"));
