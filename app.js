@@ -1,20 +1,27 @@
-// inimese kirjeldus
+// inimese kirjeldus OOP abil
+// inimese konstruktor
 
-let eesnimi, perenimi;
-let vanus;
-
-function taisNimi(eesnimi, perenimi){
-    return `${eesnimi} ${perenimi}`;
+function Isik(e, p, skp){
+    this.eesnimi = e;
+    this.perenimi = p;
+    this.synnikuupaev = new Date(skp);
 }
 
-function arvutaVanus(synnikuupaev){
-    synnikuupaev = new Date(synnikuupaev);
-    vaheSekundites =Date.now() - synnikuupaev.getTime();
-    vanusDate =new Date(vaheSekundites);
-    aastaDate = vanusDate.getUTCFullYear();
-    vanus = aastaDate -1970;
-    return `vanus ${vanus}`; 
+Isik.prototype.taisNimi = function(){
+    return `${this.eesnimi} ${this.perenimi}`;
 }
 
-console.log(taisNimi('sfdsdf', 'sfdsd'));
-console.log(arvutaVanus("2014-08-21"));
+// arvuta vanus
+Isik.prototype.arvutaVanus = function(){
+const vaheSekundites =Date.now() - this.synnikuupaev.getTime();
+const vanusDateKujul = new Date(vaheSekundites);
+const taisAasta = vanusDateKujul.getUTCFullYear();
+const vanus = taisAasta -1970;
+return vanus;
+
+}
+//objektid
+const silver = new Isik('silver', 'Lass' ,'11-30-1984');
+const kadi = new Isik('kadi', 'tamm', '11-30-1999');
+
+console.log(silver);
