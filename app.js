@@ -1,34 +1,25 @@
-//klasside kasutus
+// Raamatu konstruktor
+function Raamat(a, p, i){
+    this.autor = a;
+    this.pealkiri = p;
+    this.isbn = i;
+}
 
-class Isik{
-    // konstruktor
-    constructor(e,p){
-    this.eesnimi = e;
-    this.perenimi = p;
+document.getElementById('book-form').addEventListener('submit', lisaRaamat);
+
+function lisaRaamat(e){
+    const pealkiri = document.getElementById('title').value;
+    const autor = document.getElementById('author').value;
+    const isbn = document.getElementById('isbn').value;
     
-    }
-    // tervitus meetod
-    tervitus(){
-        return `Tere, ${this.eesnimi} ${this.perenimi} !`
-    }
+    // loome raamatu andmete põhjal
+
+    const raamat = new Raamat(pealkiri, autor, isbn)
+    
+    console.log(raamat)
+    e.preventDefault();
+
 
 }
 
-// kliendi klass
-class Klient extends Isik{
-    //konstruktor
-    constructor(e,p,t,s){
-        super(e,p);
-        this.telefon = t;
-        this.staatus = s;
 
-    }
-
-    //staatiline meetod
-    static kuutasu(){
-        return 5;
-    }
-}
-const kadi = new Klient('Kadi','Tamm','123 123','hõbe');
-console.log(kadi.tervitus());
-console.log(Klient.kuutasu());
