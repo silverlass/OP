@@ -4,58 +4,22 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href ="style.css">
-   <link rel = "stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
-   <title>Raamatud</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha256-ECB9bbROLGm8wOoEbHcHRxlHgzGqYpDtNTgDTyDz0wg=" crossorigin="anonymous" />
+  
+   <title>Data fetch</title>
+
 </head>
 <body>
-   <div class ="container">
-      <h1>Raamatud</h1>
-
-      <form id ="book-form">
-         <div>
-            <label for="title">Pealkiri</label>
-            <input type="text" id="title" class ="u-full-width">
-         </div>
-
-         <div>
-               <label for="author">Author</label>
-               <input type="text" id="author" class ="u-full-width">
-         </div>
-
-         <div>
-               <label for="isbn">ISBN</label>
-               <input type="text" id="isbn" class ="u-full-width">
-         </div>
-
-         <div>
-            <input type="submit" value ="Lisa" class="u-full-width">
-         </div>
-
-
-      </form>
-
-      <table class="u-full-width">
-            <thead>
-               <tr>
-                  <th>Pealkiri</th>
-                  <th>Author</th>
-                  <th>ISBN</th>
-                  
-               </tr>
-            </thead>
-            <tbody id="book-list"></tbody>
-
-      </table>
-
+   <div class="container">
+      <h2>Data fetch</h2>
+      <button id ="btn1">Text</button>
+      <button id = "btn2">JSON</button>
+      <button id = "btn3">API</button>
+      <hr>
+      <div id ="out"></div>
    </div>
-
-
-
-
-<script src = "app_oop.js"></script>
-<script src = "raamat.js"></script>
-<script src = "KL.js"></script>
-<script src = "LS.js"></script>
+   
+   
+   <script src="app.js"></script>
 </body>
 </html>
