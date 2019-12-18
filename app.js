@@ -1,27 +1,53 @@
-// weather for given location
-const weather = new Weather('Tartu linn');
-// app UI
-const ui = new UI();
+document.getElementById('btn1').addEventListener('click', getTextData);
+document.getElementById('btn2').addEventListener('click', getJsonData);
+document.getElementById('btn3').addEventListener('click', getJsonAPI);
 
-// show default city weather
-document.addEventListener('DOMContentLoaded', drawWeather);
-
-// change city - weather
-const changeBtn = document.getElementById('w-change');
-changeBtn.addEventListener('click', changeWeather);
-
-function changeWeather() {
-  const city = document.getElementById('city').value;
-  weather.changeCityName(city);
-  drawWeather();
-  $('#changeCity').modal('hide');
-  console.log(weather);
+function getTextData(){
+  fetch('fetch.txt').then(function(res){
+    return res.text();
+  })
+  .then(function(data) {
+    console.log(data);
+    document.getElementById('out').innerHTML = data;
+  })
+  .catch(function(error){
+    console.log(error);
+  })
 }
 
-function drawWeather() {
-  weather.weatherData().then(cityWeather => {
-    ui.print(cityWeather);
-  }).catch(error => console.log(error));
+function getJsonData(){
+  fetch('data.json').then(function(res){
+    return res.json();
+  })
+  .then(function(data){
+    console.log(data);
+    let out = '';
+    data.forEach(function(timetable){
+      out = out + `<li>${timetable.opetaja} - ${timetable.aine} </li>`;
+    });
+    document.getElementById('out').innerHTML = out;
+  })
+  .catch(function(error){
+    console.log(error);
+  })  
 }
 
-console.log(ui);
+function getJsonAPI(){
+  fetch('https://api.github.com/users')
+  .then(function(res){
+    return res.json();
+  })
+  .then(function(data){
+    console.log(data);
+    let out = '';
+    data.forEach(function(users){
+      out = out + `<li>${users.login}`;
+      out = out + `<img src="${users.avatar_url}" width="150px" </li>`;
+    });
+    document.getElementById('out').innerHTML = out;
+    
+  })
+  .catch(function(error){
+    console.log(error);
+  }); 
+}
