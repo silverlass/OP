@@ -1,53 +1,71 @@
-document.getElementById('btn1').addEventListener('click', getTextData);
-document.getElementById('btn2').addEventListener('click', getJsonData);
-document.getElementById('btn3').addEventListener('click', getJsonAPI);
 
-function getTextData(){
-  fetch('fetch.txt').then(function(res){
-    return res.text();
-  })
-  .then(function(data) {
-    console.log(data);
-    document.getElementById('out').innerHTML = data;
-  })
-  .catch(function(error){
-    console.log(error);
-  })
-}
 
-function getJsonData(){
-  fetch('data.json').then(function(res){
-    return res.json();
-  })
-  .then(function(data){
-    console.log(data);
-    let out = '';
-    data.forEach(function(timetable){
-      out = out + `<li>${timetable.opetaja} - ${timetable.aine} </li>`;
-    });
-    document.getElementById('out').innerHTML = out;
-  })
-  .catch(function(error){
-    console.log(error);
-  })  
-}
+class Ylesanne{
+    constructor(sisu){
+    this.sisu = sisu;
+  }
+};
 
-function getJsonAPI(){
-  fetch('https://api.github.com/users')
-  .then(function(res){
-    return res.json();
-  })
-  .then(function(data){
-    console.log(data);
-    let out = '';
-    data.forEach(function(users){
-      out = out + `<li>${users.login}`;
-      out = out + `<img src="${users.avatar_url}" width="150px" </li>`;
-    });
-    document.getElementById('out').innerHTML = out;
+class KL{
+
     
-  })
-  .catch(function(error){
-    console.log(error);
-  }); 
+
+    lisaYlesanne(){
+    let todosUl = document.querySelector('ul');
+    let todosLi = document.createElement('li');
+    let a = document.createElement('a');
+    let i = document.createElement('i');
+    
+    todosLi.innerHTML = document.getElementById('task').value;
+    
+    todosLi.className = "collection-item";
+    a.className = "secondary-content delete-item";
+    a.href = "#";
+    i.className = "fa fa-remove";
+    
+    todosUl.appendChild(todosLi);
+    todosLi.appendChild(a);
+    a.appendChild(i);
+    let as  = document.querySelectorAll('.delete-item');
+    for (let element of as){
+        element.addEventListener('click', function(){element.parentNode.remove();
+        })
+      }
+    }
+    
+    kustutaKoik(){
+      document.querySelector('.collection').innerHTML = '';
+    }
 }
+    
+      
+
+
+let lisa = new KL();
+let eemaldaKoik = new KL();
+
+
+document.querySelector('.btn_lisaylesanne').addEventListener('click', lisa.lisaYlesanne);
+document.querySelector('.clear-tasks').addEventListener('click', eemaldaKoik.kustutaKoik);
+
+
+
+class LS{
+  lisaLocalStoragisse(){
+  // Plaanime luua localstoragisse lisamise  
+    
+    localStorage.setItem('todo',JSON.stringify(document.getElementById('task').value));
+    
+  }
+
+  votaLocalStoragist(){
+    // Localstoragist lugemine
+    localStorage.getItem
+  }
+
+  //Localstoragist kustutamine
+}
+let lisaLS = new LS()
+document.querySelector('.btn_lisaylesanne').addEventListener('click', lisaLS.lisaLocalStoragisse);
+
+
