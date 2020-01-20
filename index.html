@@ -6,41 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>OOP</title>
     
 </head>
 <body>
    <div class="container">
-      <div class="row">
-         <div class="col s12">
-            <div class="card">
-               <div class="card-content">
-                  <span id ="title" class="card-title">Ülesanded</span>
-                  <form id ="add-task">
-                        <div class="row">
-                           <div class="input-field col s12">
-                              <label for ="task">Uus ülesanne</label>
-                              
-                              <input type="text" id="task" placeholder ="Lisa ülesanne">
-                           </div>
-                        </div>
-                        <input type="button" value="lisa ülesanne" class ="btn btn_lisaylesanne">
-                  </form>
-               </div>
-               <div class="card-action">
-                  <h5>Lisatud ülesanded</h5>
-
-                  <ul class="collection">
-                     
-
-                  </ul>
-                  <a href="#" class ="btn black clear-tasks">Kustuta kõik ülesanded</a>
-
-               </div>
+      <div class="row tere">
+        <div class="col s12">
+          
+          
+        <div class="card">
+        <div class="card-content">
+        <h4 class="card-title">Uus Ülesanne</h4>
+              <div class="row">
+                <form id="add-task">
+                  <div class="input-field col s12">
+                    <input type="text" id="task">
+                    <label for="task">Uus Ülesanne</label>
+                  </div>
+                  <input type="submit" value="Lisa Ülesanne" class="btn">
+                </form>
+              </div>
             </div>
-         </div>
+            
+            
+            
+            <div class="card-action">
+                <h4 class="card-title">Minu ülesanded</h4>
+                
+                <ul class="collection"></ul>
+                <a href="#" id="clear-tasks" class="btn grey">Kustuta Ülesanded</a>
+            </div>
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
 
 <script src= "app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
